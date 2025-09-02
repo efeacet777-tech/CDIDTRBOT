@@ -153,25 +153,12 @@ async def meslekler(ctx):
 async def on_ready():
     salary_check.start()
     print(f"Bot giriş yaptı: {bot.user}")
-# discord kütüphaneleri
-import discord
-from discord.ext import commands
-import os
-from dotenv import load_dotenv
-
-# .env dosyasını yükle
 load_dotenv()
-
 # .env içinden DISCORD_TOKEN değerini al
 TOKEN = os.getenv("DISCORD_TOKEN")
 
 # Bot prefix ve izinler
-bot = commands.Bot(command_prefix="!", intents=discord.Intents.all())
-
-# Bot açıldığında terminale mesaj gönder
-@bot.event
-async def on_ready():
-    print(f"{bot.user} olarak giriş yapıldı!")
 
 # Botu başlat
 bot.run(TOKEN)
+
